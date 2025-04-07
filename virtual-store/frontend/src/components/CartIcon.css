@@ -1,0 +1,12 @@
+.cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px; /* Espacio entre el carrito y otros elementos */
+}
+
+.cart-icon {
+    width: 24px; /* Tamaño del ícono */
+    height: 24px;
+    cursor: pointer;
+}

@@ -1,0 +1,167 @@
+.carrito-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.carrito-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.carrito-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.carrito-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-imagen {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.carrito-info {
+    flex: 1;
+}
+
+/* Contenedor de cantidad */
+.carrito-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el label y el input */
+    margin-top: 10px; /* Espacio superior */
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+/* Etiqueta de cantidad */
+.carrito-cantidad label {
+    font-weight: bold;
+    color: #333; /* Color del texto */
+}
+
+/* Campo de entrada de cantidad */
+.carrito-cantidad input {
+    width: 60px; /* Ancho del input */
+    height: 35px; /* Altura del input */
+    font-size: 16px; /* Tamaño del texto */
+    text-align: center; /* Centrar el texto */
+    border: 1px solid #ccc; /* Borde del input */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none; /* Quitar el borde azul al seleccionar */
+    transition: border-color 0.3s ease; /* Transición suave */
+}
+
+/* Efecto al enfocar el input */
+.carrito-cantidad input:focus {
+    border-color: #4caf50; /* Cambiar el color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra verde */
+}
+
+.carrito-eliminar {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Ocultar las flechas en navegadores basados en WebKit (Chrome, Edge, Safari) */
+.carrito-cantidad input::-webkit-inner-spin-button,
+.carrito-cantidad input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Contenedor de control de cantidad */
+.cantidad-control {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre los botones y el input */
+}
+
+/* Botones personalizados para incrementar y decrementar */
+.cantidad-boton {
+    width: 35px;
+    height: 35px;
+    background-color: #4caf50; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en los botones */
+.cantidad-boton:hover {
+    background-color: #45a049; /* Verde más oscuro */
+}
+
+/* Input de cantidad */
+.cantidad-control input {
+    width: 60px;
+    height: 35px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al enfocar el input */
+.cantidad-control input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.carrito-eliminar:hover {
+    background-color: #e60000;
+}
+
+.carrito-total-container {
+    display: flex; /* Usar flexbox para alinear los elementos */
+    justify-content: space-between; /* Separar los elementos horizontalmente */
+    align-items: flex-end; /* Alinear los elementos al fondo verticalmente */
+    margin-top: 20px; /* Espacio superior */
+    padding: 10px 0; /* Espaciado interno */
+}
+.carrito-total {
+    text-align: right; /* Alinear el texto del total a la derecha */
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0; /* Eliminar márgenes adicionales */
+}
+/* Contenedor del botón de PayPal */
+#paypal-button-container {
+    text-align: left; /* Alinear el botón de PayPal a la izquierda */
+    margin: 0; /* Eliminar márgenes adicionales */
+    width: 50vh; /* Ancho del input */
+}
+
+/* Ajustes para el botón de PayPal en hover */
+#paypal-button-container:hover {
+    background-color: #f1f1f1; /* Fondo más claro al pasar el mouse */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}

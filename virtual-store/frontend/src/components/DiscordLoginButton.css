@@ -1,0 +1,70 @@
+.discord-login-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre las cajas */
+}
+.discord-login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5865F2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.discord-login-button:hover {
+    background-color: #4752C4;
+}
+
+.discord-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el carrito y el avatar */
+    flex-direction: row; /* Asegurar que los elementos estén en una fila */
+}
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.logout-button {
+    position: absolute; /* Hacer que el botón sea flotante */
+    transform: translateX(-50%); /* Ajustar el centrado */
+    right: 3%; /* Centrar el botón horizontalmente */
+    top: 55px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Espacio entre el nombre y el botón */
+}
+
+.logout-button:hover {
+    background-color: #CC4444;
+}
+
+
+.cart-icon {
+    width: 24px; /* Tamaño del ícono */
+    height: 24px;
+    cursor: pointer;
+}

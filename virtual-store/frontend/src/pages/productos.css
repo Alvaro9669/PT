@@ -1,0 +1,178 @@
+.productos-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.productos-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.producto-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.producto-imagen {
+    width: 250px; /* Ancho fijo en píxeles */
+    height: 200px; /* Alto fijo en píxeles */
+    object-fit: cover; /* Ajusta la imagen para que llene el espacio sin deformarse */
+    display: block; /* Asegura que la imagen sea un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.producto-nombre {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.producto-precio {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px;
+    text-align: center;
+}
+
+.producto-boton {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #5865F2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.producto-boton:hover {
+    background-color: #4752C4;
+}
+
+/* Notificación emergente */
+.notificacion {
+    position: fixed;
+    top: 20px;
+    right: 45%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    z-index: 1000;
+    animation: fadeInOut 1s ease-in-out;
+}
+
+/* Notificación verde (éxito) */
+.notificacion.success {
+    background-color: #4caf50; /* Verde */
+    color: white;
+}
+
+/* Notificación roja (error) */
+.notificacion.error {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+/* Animación para la notificación */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Contenedor de cantidad */
+.producto-cantidad {
+    display: flex;
+    flex-direction: column; /* Alinear el label y los controles en columna */
+    align-items: center; /* Centrar horizontalmente */
+    text-align: center; /* Centrar el texto */
+    margin-top: 10px; /* Espacio superior */
+}
+
+/* Contenedor de control de cantidad */
+.cantidad-control {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar los botones y el input */
+    gap: 5px; /* Espacio entre los botones y el input */
+    margin-top: 5px; /* Espacio entre el label y los controles */
+}
+
+/* Botones personalizados para incrementar y decrementar */
+.cantidad-boton {
+    width: 35px;
+    height: 35px;
+    background-color: #4caf50; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en los botones */
+.cantidad-boton:hover {
+    background-color: #45a049; /* Verde más oscuro */
+}
+
+/* Input de cantidad */
+.cantidad-control input {
+    width: 60px;
+    height: 35px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al enfocar el input */
+.cantidad-control input:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}

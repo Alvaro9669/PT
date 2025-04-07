@@ -1,0 +1,43 @@
+/* Contenedor principal del menú horizontal */
+.horizontal-menu {
+    display: flex;
+    justify-content: flex-start; /* Alinear los elementos al inicio */
+    align-items: center; /* Centrar los elementos verticalmente */
+    background-color: #f8f9fa; /* Color de fondo opcional */
+    padding: 10px 20px; /* Espaciado interno del menú */
+}
+
+/* Lista de elementos del menú */
+.horizontal-menu ul {
+    display: flex; /* Alinear los elementos en línea */
+    margin: 0; /* Eliminar márgenes externos */
+    padding: 0; /* Eliminar relleno interno */
+    list-style: none; /* Eliminar viñetas de la lista */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* Elementos individuales del menú */
+.horizontal-menu li {
+    margin-right: 15px; /* Espaciado entre los elementos */
+}
+
+/* Botón "Home" */
+.home-button {
+    margin-right: auto; /* Empuja los demás elementos hacia la derecha */
+    margin-left: 0; /* Asegura que no haya margen a la izquierda */
+}
+
+/* Botón de inicio de sesión con Discord */
+.discord-login {
+    margin-left: auto; /* Empuja el botón de Discord a la derecha */
+}
+
+/* Menú desplegable */
+.dropdown-menu {
+    position: relative; /* Asegura que los elementos hijos se posicionen en relación con este contenedor */
+    display: inline-block; /* Asegura que el menú desplegable se comporte como un bloque en línea */
+    padding-left: 10px;
+}
+.cart-container {
+    margin-left: 10px; /* Empuja el carrito hacia la derecha */
+}

@@ -1,0 +1,48 @@
+.dropdown-menu {
+    position: relative; /* Asegura que los elementos hijos se posicionen en relación con este contenedor */
+    display: inline-block;
+}
+
+.dropdown-menu .menu-button {
+    background-color: #1f2455;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.dropdown-menu .menu-button:hover {
+    background-color: #4752C4;
+}
+
+.dropdown-menu .dropdown-list {
+    position: absolute; /* Posiciona el menú desplegable en relación con el contenedor padre */
+    top: 100%; /* Coloca el menú justo debajo del botón */
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    z-index: 1000;
+}
+
+.dropdown-menu .dropdown-list li {
+    display: block; /* Asegura que cada elemento ocupe una línea completa */
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu .dropdown-list li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu .dropdown-list li:hover {
+    background-color: #f8f9fa;
+}
