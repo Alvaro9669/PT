@@ -15,8 +15,9 @@ router.get('/', async (req, res) => {
 // Crear un nuevo ticket
 router.post('/', async (req, res) => {
     try {
-        const ticket = await Ticket.create(req.body);
-        res.status(201).json(ticket);
+        const { userId, total } = req.body;
+        const ticketId = await Ticket.create(userId, total);
+        res.status(201).json({ ticketId });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }

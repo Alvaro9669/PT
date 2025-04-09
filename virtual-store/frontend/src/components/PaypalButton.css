@@ -1,0 +1,43 @@
+.popup {
+    position: fixed;
+    top: 5vh;
+    right: 50vh;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    z-index: 1000;
+    animation: fadeInOut 1s ease-in-out;
+}
+
+/* Animación de entrada y salida */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilo para mensajes de éxito */
+.popup.success {
+    background-color: #4caf50; /* Verde para éxito */
+    color: white; /* Texto blanco */
+}
+
+/* Estilo para mensajes de error */
+.popup.error {
+    background-color: #ff4d4d; /* Rojo para error */
+    color: white; /* Texto blanco */
+}
