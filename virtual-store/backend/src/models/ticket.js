@@ -4,7 +4,7 @@ const Ticket = {
     async create(userId, total) {
         // Crear el ticket
         const [ticketResult] = await pool.query(
-            'INSERT INTO ticket (usuario_FK, fecha, hora, total) VALUES (?, CURDATE(), CURTIME(), ?)',
+            'INSERT INTO ticket (usuario_FK, fecha, hora, total, notificar) VALUES (?, CURDATE(), CURTIME(), ?, 1)',
             [userId, total]
         );
         const ticketId = ticketResult.insertId;

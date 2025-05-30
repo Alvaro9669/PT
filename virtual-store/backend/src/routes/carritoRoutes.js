@@ -45,11 +45,17 @@ router.get('/', async (req, res) => {
 
         if (carritoProductos.length === 0) {
             console.log('No carrito or products found for user:', userId);
-            return res.status(404).send('Carrito or products not found');
+            return res.json([]);
         }
 
-        console.log('Carrito and products found:', carritoProductos);
-        res.json(carritoProductos);
+        // Convertir las imágenes a base64
+        const carritoConImagenes = carritoProductos.map(item => ({
+            ...item,
+            imagen: item.imagen ? `data:image/jpeg;base64,${item.imagen.toString('base64')}` : null,
+        }));
+
+        console.log('Carrito and products found:', carritoConImagenes);
+        res.json(carritoConImagenes);
     } catch (error) {
         console.error('Error fetching carrito and products:', error.message);
         res.status(500).json({ error: error.message });
@@ -102,7 +108,7 @@ router.put('/productos/:id', async (req, res) => {
         );
 
         if (carritoProducto.length === 0) {
-            return res.status(404).send('Product not found in user\'s carrito');
+            return res.json([]);
         }
 
         const articuloId = carritoProducto[0].ID_articulosc;

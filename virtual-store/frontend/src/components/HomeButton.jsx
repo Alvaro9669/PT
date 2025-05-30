@@ -7,7 +7,7 @@ const HomeButton = () => {
 
     return (
         <button onClick={handleHomeClick} className="home-button">
-            Home
+            Inicio
         </button>
     );
 };

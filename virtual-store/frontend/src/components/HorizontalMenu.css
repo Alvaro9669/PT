@@ -1,43 +1,147 @@
-/* Contenedor principal del menú horizontal */
 .horizontal-menu {
+    position: fixed;
     display: flex;
-    justify-content: flex-start; /* Alinear los elementos al inicio */
-    align-items: center; /* Centrar los elementos verticalmente */
-    background-color: #f8f9fa; /* Color de fondo opcional */
-    padding: 10px 20px; /* Espaciado interno del menú */
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 30px;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+    background-color: transparent;
+
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    background-color: rgba(42, 42, 74, var(--bg-opacity));
+    transition: backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
 
+.horizontal-menu.scrolled {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(42, 42, 74, 0.3);  
+    /* Añade una transición más suave */
+    transition: backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+/* Puedes agregar esto a HorizontalMenu.css */
+.discord-join-btn {
+    background: #23272a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(88,101,242,0.08);
+}
+.discord-join-btn:hover {
+    background: #36393f;
+    box-shadow: 0 4px 16px rgba(88,101,242,0.15);
+}
 /* Lista de elementos del menú */
 .horizontal-menu ul {
-    display: flex; /* Alinear los elementos en línea */
-    margin: 0; /* Eliminar márgenes externos */
-    padding: 0; /* Eliminar relleno interno */
-    list-style: none; /* Eliminar viñetas de la lista */
-    width: 100%; /* Asegura que ocupe todo el ancho */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
 }
 
 /* Elementos individuales del menú */
 .horizontal-menu li {
-    margin-right: 15px; /* Espaciado entre los elementos */
+    margin-right: 25px;
 }
+
+/* Enlaces del menú */
+.horizontal-menu a {
+    color: #e6e6e6;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
 
 /* Botón "Home" */
 .home-button {
-    margin-right: auto; /* Empuja los demás elementos hacia la derecha */
-    margin-left: 0; /* Asegura que no haya margen a la izquierda */
+    margin-right: auto;
+    margin-left: 0;
 }
 
 /* Botón de inicio de sesión con Discord */
 .discord-login {
-    margin-left: auto; /* Empuja el botón de Discord a la derecha */
+    margin-left: auto;
+   
+    border-radius: 5px;
+    padding: 8px 15px;
 }
+
 
 /* Menú desplegable */
 .dropdown-menu {
-    position: relative; /* Asegura que los elementos hijos se posicionen en relación con este contenedor */
-    display: inline-block; /* Asegura que el menú desplegable se comporte como un bloque en línea */
+    position: relative;
+    display: inline-block;
     padding-left: 10px;
 }
+
+.dropdown-menu ul {
+    display: none;
+    position: absolute;
+    background-color: rgba(42, 42, 74, 0.95);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 150px;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-menu:hover ul {
+    display: block;
+}
+
+.dropdown-menu ul li {
+    margin: 5px 0;
+}
+
+.dropdown-menu ul a {
+    color: #e6e6e6;
+    padding: 5px 10px;
+    display: block;
+}
+
 .cart-container {
-    margin-left: 10px; /* Empuja el carrito hacia la derecha */
+    margin-left: 20px;
+    position: relative;
+}
+
+/* Icono del carrito */
+.cart-icon {
+    color: #e6e6e6;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Contador del carrito */
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
 }

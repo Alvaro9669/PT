@@ -30,6 +30,6 @@ app.use('/api/carritos', carritoRoutes);
 app.use('/api/paypal', paypalRoutes); // Monta las rutas de PayPal
 
 // Iniciar el servidor
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Servidor corriendo en http://192.168.1.116:${PORT}`);
 });

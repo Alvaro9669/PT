@@ -1,167 +1,231 @@
 .carrito-container {
-    padding: 20px;
-    background-color: #f9f9f9;
+    padding: 40px 20px;
+    background-color: #0F0F0F;
     min-height: 100vh;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .carrito-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+    position: relative;
+    letter-spacing: 3px;
+}
+
+.carrito-title::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: #8A2BE2;
+    margin: 15px auto;
+    border-radius: 2px;
 }
 
 .carrito-items {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 
 .carrito-item {
     display: flex;
     align-items: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #1A1A1A;
+    border: 1px solid #2D2D2D;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.carrito-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+    border: 1px solid rgba(138, 43, 226, 0.5);
 }
 
 .carrito-imagen {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
+    border-radius: 10px;
+    margin-right: 30px;
+    border: 2px solid #8A2BE2;
 }
 
 .carrito-info {
     flex: 1;
+    color: #E6E6FA;
 }
 
-/* Contenedor de cantidad */
 .carrito-cantidad {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre el label y el input */
-    margin-top: 10px; /* Espacio superior */
-    font-size: 20px; /* Tamaño de fuente */
+    gap: 15px;
+    margin: 20px 0;
 }
 
-/* Etiqueta de cantidad */
 .carrito-cantidad label {
-    font-weight: bold;
-    color: #333; /* Color del texto */
+    font-size: 1.2rem;
+    color: #00FF7F;
+    text-shadow: 0 0 8px rgba(0, 255, 127, 0.3);
 }
 
-/* Campo de entrada de cantidad */
-.carrito-cantidad input {
-    width: 60px; /* Ancho del input */
-    height: 35px; /* Altura del input */
-    font-size: 16px; /* Tamaño del texto */
-    text-align: center; /* Centrar el texto */
-    border: 1px solid #ccc; /* Borde del input */
-    border-radius: 5px; /* Bordes redondeados */
-    outline: none; /* Quitar el borde azul al seleccionar */
-    transition: border-color 0.3s ease; /* Transición suave */
-}
-
-/* Efecto al enfocar el input */
-.carrito-cantidad input:focus {
-    border-color: #4caf50; /* Cambiar el color del borde al enfocar */
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra verde */
-}
-
-.carrito-eliminar {
-    background-color: #ff4d4d;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-/* Ocultar las flechas en navegadores basados en WebKit (Chrome, Edge, Safari) */
-.carrito-cantidad input::-webkit-inner-spin-button,
-.carrito-cantidad input::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* Contenedor de control de cantidad */
 .cantidad-control {
     display: flex;
     align-items: center;
-    gap: 5px; /* Espacio entre los botones y el input */
+    gap: 10px;
 }
 
-/* Botones personalizados para incrementar y decrementar */
 .cantidad-boton {
-    width: 35px;
-    height: 35px;
-    background-color: #4caf50; /* Verde */
-    color: white;
+    width: 45px;
+    height: 45px;
+    background: #8A2BE2;
     border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.3rem;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-/* Efecto hover en los botones */
 .cantidad-boton:hover {
-    background-color: #45a049; /* Verde más oscuro */
+    background: #4B0082;
+    transform: scale(1.1);
 }
 
-/* Input de cantidad */
 .cantidad-control input {
-    width: 60px;
-    height: 35px;
-    font-size: 16px;
+    width: 80px;
+    height: 45px;
+    background: #2D2D2D;
+    border: 2px solid #8A2BE2;
+    color: white;
+    font-size: 1.2rem;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
+    border-radius: 8px;
 }
 
-/* Efecto al enfocar el input */
-.cantidad-control input:focus {
-    border-color: #4caf50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+.carrito-eliminar {
+    background: linear-gradient(135deg, #FF4500, #FF0000);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .carrito-eliminar:hover {
-    background-color: #e60000;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 .carrito-total-container {
-    display: flex; /* Usar flexbox para alinear los elementos */
-    justify-content: space-between; /* Separar los elementos horizontalmente */
-    align-items: flex-end; /* Alinear los elementos al fondo verticalmente */
-    margin-top: 20px; /* Espacio superior */
-    padding: 10px 0; /* Espaciado interno */
-}
-.carrito-total {
-    text-align: right; /* Alinear el texto del total a la derecha */
-    font-size: 1.5rem;
-    color: #333;
-    margin: 0; /* Eliminar márgenes adicionales */
-}
-/* Contenedor del botón de PayPal */
-#paypal-button-container {
-    text-align: left; /* Alinear el botón de PayPal a la izquierda */
-    margin: 0; /* Eliminar márgenes adicionales */
-    width: 50vh; /* Ancho del input */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 30px;
+    background: #1A1A1A;
+    border-radius: 15px;
+    max-width: 1500px;
+    margin: 40px auto 0;
 }
 
-/* Ajustes para el botón de PayPal en hover */
+.carrito-total {
+    font-size: 2rem;
+    color: #00FF7F;
+    text-shadow: 0 0 8px rgba(0, 255, 127, 0.3);
+}
+
+#paypal-button-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
 #paypal-button-container:hover {
-    background-color: #f1f1f1; /* Fondo más claro al pasar el mouse */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+}
+
+/* Notificaciones */
+.notificacion {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    z-index: 1000;
+    animation: fadeInOut 1s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.notificacion.success {
+    background: rgba(0, 255, 127, 0.15);
+    border: 1px solid #00FF7F;
+    color: #00FF7F;
+}
+
+.notificacion.error {
+    background: rgba(255, 69, 0, 0.15);
+    border: 1px solid #FF4500;
+    color: #FF4500;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px) translateX(-50%); }
+    10% { opacity: 1; transform: translateY(0) translateX(-50%); }
+    90% { opacity: 1; transform: translateY(0) translateX(-50%); }
+    100% { opacity: 0; transform: translateY(-10px) translateX(-50%); }
+}
+
+.carrito-vacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+    background: linear-gradient(135deg, #1a1a1a 80%, #8A2BE2 100%);
+    border-radius: 18px;
+    margin: 30px auto;
+    box-shadow: 0 4px 32px rgba(138, 43, 226, 0.12);
+    border: 2px dashed #8A2BE2;
+    max-width: 600px;
+    padding: 40px 20px;
+}
+
+.carrito-vacio p {
+    color: #8A2BE2;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+    text-shadow: 0 2px 16px rgba(138,43,226,0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.carrito-vacio::before {
+    content: "🛒";
+    font-size: 3.5rem;
+    margin-bottom: 18px;
+    display: block;
+    animation: carritoBounce 1.2s infinite alternate;
+}
+
+@keyframes carritoBounce {
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-10px);}
 }

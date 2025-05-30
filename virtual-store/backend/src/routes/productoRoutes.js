@@ -5,7 +5,7 @@ const Producto = require('../models/productos');
 // Obtener todos los productos
 router.get('/', async (req, res) => {
     try {
-        const productos = await Producto.getAll(); // Asegúrate de que este método exista y funcione
+        const productos = await Producto.getAll();
         res.json(productos);
     } catch (error) {
         console.error('Error fetching products:', error.message);

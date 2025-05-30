@@ -20,7 +20,7 @@ class AuthController {
         
         res.cookie('oauth_state', state, { 
             httpOnly: true, 
-            secure: process.env.NODE_ENV === 'production',
+            secure: false,
             maxAge: 60000, // 1 minuto de expiración
             sameSite: 'lax'
         });
@@ -95,7 +95,7 @@ class AuthController {
             console.log('User payload for cookie:', userPayload); // Verificar el contenido de la cookie
             res.cookie('user', JSON.stringify(userPayload), { 
                 httpOnly: true,
-                secure: process.env.NODE_ENV === 'production' ? true : false,
+                secure: false,
                 maxAge: 24 * 60 * 60 * 1000, // 1 día
                 sameSite: 'lax'
             });
@@ -110,7 +110,7 @@ class AuthController {
     logout(req, res) {
         res.clearCookie('user', {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
+            secure: false,
             sameSite: 'lax'
         });
         res.redirect(`${process.env.FRONTEND_URL}/login`);

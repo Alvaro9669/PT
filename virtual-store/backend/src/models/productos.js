@@ -3,7 +3,11 @@ const pool = require('../config/database');
 const Producto = {
     async getAll() {
         const [rows] = await pool.query('SELECT * FROM producto');
-        return rows;
+        // Convierte la imagen binaria a base64
+        return rows.map(row => ({
+            ...row,
+            imagen: row.imagen ? `data:image/jpeg;base64,${row.imagen.toString('base64')}` : null,
+        }));
     },
 
     async create(data) {

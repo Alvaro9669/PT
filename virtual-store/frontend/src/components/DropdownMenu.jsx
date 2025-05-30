@@ -11,13 +11,13 @@ const DropdownMenu = () => {
     return (
         <div className="dropdown-menu">
             <button onClick={toggleMenu} className="menu-button">
-                Menu
+                Categorias
             </button>
             {isOpen && (
                 <ul className="dropdown-list">
-                    <li>Category 1</li>
-                    <li>Category 2</li>
-                    <li>Category 3</li>
+                    <li>Categoria 1</li>
+                    <li>Categoria 2</li>
+                    <li>Categoria 3</li>
                 </ul>
             )}
         </div>

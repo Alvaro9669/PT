@@ -63,7 +63,7 @@ const PaypalButton = ({ total }) => {
                                 setPopupType('success'); // Tipo de mensaje: éxito
                                 setTimeout(() => {
                                     setPopupMessage(null);
-                                    window.location.href = 'http://localhost:3000/carrito'; // Redirigir al carrito
+                                    window.location.href = 'http://172.18.57.214:3000/carrito'; // Redirigir al carrito
                                 }, 2000);
                             } else {
                                 setPopupMessage(result.message || 'El pago no se completó.');

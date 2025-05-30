@@ -1,12 +1,23 @@
-.cart-container {
+.cart-icon-container {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-right: 15px; /* Espacio entre el carrito y otros elementos */
 }
 
+/* Color del ícono */
 .cart-icon {
-    width: 24px; /* Tamaño del ícono */
+    width: 24px;
     height: 24px;
     cursor: pointer;
+    filter: invert(99%) sepia(3%) saturate(687%) hue-rotate(314deg) brightness(118%) contrast(89%); /* Color blanco */
+    transition: all 0.3s ease;
+}
+
+/* Hover y estados */
+.cart-icon:hover {
+    filter: invert(65%) sepia(65%) saturate(521%) hue-rotate(88deg) brightness(94%) contrast(89%); /* Verde neón */
+}
+
+.horizontal-menu.scrolled .cart-icon {
+    filter: invert(16%) sepia(13%) saturate(1412%) hue-rotate(183deg) brightness(93%) contrast(89%); /* Color del tema oscuro */
 }

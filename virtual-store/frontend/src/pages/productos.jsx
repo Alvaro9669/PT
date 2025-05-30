@@ -64,7 +64,7 @@ const Productos = () => {
                             className="producto-imagen" 
                         />
                         <h2 className="producto-nombre">{producto.n_articulo}</h2>
-                        <p className="producto-precio">${producto.precio.toFixed(2)}</p>
+                        <p className="producto-precio">${producto.precio.toFixed(2)} MXN</p>
                         <div className="producto-cantidad">
                             <label>Cantidad:</label>
                             <div className="cantidad-control">

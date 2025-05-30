@@ -1,178 +1,235 @@
 .productos-container {
-    padding: 20px;
-    background-color: #f9f9f9;
+    padding: 40px 20px;
+    background-color: #0F0F0F; /* Gris oscuro casi negro */
     min-height: 100vh;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .productos-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+    position: relative;
+    letter-spacing: 3px;
+}
+
+.productos-title::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: #8A2BE2; /* Morado eléctrico */
+    margin: 15px auto;
+    border-radius: 2px;
 }
 
 .productos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0 20px;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    gap: 35px;
+    padding: 0 30px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 1080px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+        gap: 3vh; /* Reducir el espacio entre elementos */
+        padding: 0 2vh; /* Ajustar el padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .productos-grid {
+        grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+        gap: 2vh; /* Reducir aún más el espacio */
+        padding: 0 1vh; /* Ajustar el padding */
+    }
 }
 
 .producto-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #1A1A1A;
+    border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid #2D2D2D;
 }
 
 .producto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+}
+
+.producto-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #8A2BE2, #4B0082);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.producto-card:hover::before {
+    opacity: 0.3;
 }
 
 .producto-imagen {
-    width: 250px; /* Ancho fijo en píxeles */
-    height: 200px; /* Alto fijo en píxeles */
-    object-fit: cover; /* Ajusta la imagen para que llene el espacio sin deformarse */
-    display: block; /* Asegura que la imagen sea un bloque */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 2px solid #8A2BE2;
+    transition: transform 0.3s;
+}
+
+.producto-imagen:hover {
+    transform: scale(1.05);
 }
 
 .producto-nombre {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 10px;
-    color: #333;
+    font-size: 1.4rem;
+    margin: 20px 15px;
+    color: #E6E6FA; /* Lavanda suave */
     text-align: center;
+    font-weight: 600;
 }
 
 .producto-precio {
-    font-size: 1rem;
-    color: #666;
-    margin: 10px;
+    font-size: 1.6rem;
+    color: #00FF7F; /* Verde neón */
+    margin: 15px;
     text-align: center;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(0, 255, 127, 0.3);
 }
 
 .producto-boton {
     display: block;
-    width: calc(100% - 20px);
-    margin: 10px auto;
-    padding: 10px;
-    background-color: #5865F2;
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    background: linear-gradient(135deg, #8A2BE2, #4B0082);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 1rem;
-    text-align: center;
-    transition: background-color 0.2s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.producto-boton::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+.producto-boton:hover::after {
+    left: 50%;
+    top: 50%;
 }
 
 .producto-boton:hover {
-    background-color: #4752C4;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
 }
 
-/* Notificación emergente */
-.notificacion {
-    position: fixed;
-    top: 5vh;
-    right: 50vh;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    font-size: 16px;
-    z-index: 1000;
-    animation: fadeInOut 1s ease-in-out;
-}
-
-/* Notificación verde (éxito) */
-.notificacion.success {
-    background-color: #4caf50; /* Verde */
-    color: white;
-}
-
-/* Notificación roja (error) */
-.notificacion.error {
-    background-color: #f44336; /* Rojo */
-    color: white;
-}
-
-/* Animación para la notificación */
-@keyframes fadeInOut {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    10% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    90% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-}
-
-/* Contenedor de cantidad */
+/* Estilos para cantidad */
 .producto-cantidad {
-    display: flex;
-    flex-direction: column; /* Alinear el label y los controles en columna */
-    align-items: center; /* Centrar horizontalmente */
-    text-align: center; /* Centrar el texto */
-    margin-top: 10px; /* Espacio superior */
+    margin: 20px 0;
+    text-align: center;
 }
 
-/* Contenedor de control de cantidad */
 .cantidad-control {
     display: flex;
-    align-items: center;
-    justify-content: center; /* Centrar los botones y el input */
-    gap: 5px; /* Espacio entre los botones y el input */
-    margin-top: 5px; /* Espacio entre el label y los controles */
-}
-
-/* Botones personalizados para incrementar y decrementar */
-.cantidad-boton {
-    width: 35px;
-    height: 35px;
-    background-color: #4caf50; /* Verde */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    gap: 15px;
+    align-items: center;
 }
 
-/* Efecto hover en los botones */
+.cantidad-boton {
+    width: 45px;
+    height: 45px;
+    background: #8A2BE2;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
 .cantidad-boton:hover {
-    background-color: #45a049; /* Verde más oscuro */
+    background: #4B0082;
+    transform: scale(1.1);
 }
 
-/* Input de cantidad */
 .cantidad-control input {
-    width: 60px;
-    height: 35px;
-    font-size: 16px;
+    width: 80px;
+    height: 45px;
+    background: #2D2D2D;
+    border: 2px solid #8A2BE2;
+    color: white;
+    font-size: 1.2rem;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
+    border-radius: 8px;
 }
 
-/* Efecto al enfocar el input */
-.cantidad-control input:focus {
-    border-color: #4caf50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+/* Notificaciones estilo neón */
+.notificacion.success {
+    background: rgba(0, 255, 127, 0.15);
+    border: 1px solid #00FF7F;
+    color: #00FF7F;
+    backdrop-filter: blur(5px);
+}
+
+.notificacion.error {
+    background: rgba(255, 69, 0, 0.15);
+    border: 1px solid #FF4500;
+    color: #FF4500;
+}
+
+/* Efecto de borde brillante en hover */
+.producto-card:hover {
+    border: 1px solid rgba(138, 43, 226, 0.5);
+}
+
+/* Fondo de partículas decorativas (opcional) */
+.productos-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.productos-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(138, 43, 226, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: 0;
+    align-items: center;
+}
+
+.productos-container label {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px; 
 }

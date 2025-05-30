@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     gap: 20px; /* Espacio entre las cajas */
+    margin-right: 20px;
 }
 .discord-login-button {
     display: flex;
@@ -36,6 +37,8 @@
     gap: 10px; /* Espacio entre el carrito y el avatar */
     flex-direction: row; /* Asegurar que los elementos estén en una fila */
 }
+
+
 .user-avatar {
     width: 40px;
     height: 40px;
@@ -67,4 +70,14 @@
     width: 24px; /* Tamaño del ícono */
     height: 24px;
     cursor: pointer;
+}
+
+.user-nickname {
+    color: #ffffff; /* Color blanco */
+    font-weight: 500;
+    font-size: 1rem;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
