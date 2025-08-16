@@ -1,0 +1,100 @@
+/* General */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+select:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Vista previa de la imagen */
+img {
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para filas */
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.col {
+  flex: 1;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}
