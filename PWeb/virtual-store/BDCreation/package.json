@@ -1,0 +1,17 @@
+{
+  "name": "virtual-store-database-setup",
+  "version": "1.0.0",
+  "description": "Script para crear la base de datos del sistema de punto de venta con bot de Discord",
+  "main": "create_database.js",
+  "scripts": {
+    "create-db": "node create_database.js",
+    "install-deps": "npm install mysql2 dotenv"
+  },
+  "dependencies": {
+    "mysql2": "^3.14.0",
+    "dotenv": "^16.3.1"
+  },
+  "keywords": ["mysql", "database", "discord", "paypal", "virtual-store"],
+  "author": "Álvaro Arturo Ramírez Arriaga",
+  "license": "MIT"
+}

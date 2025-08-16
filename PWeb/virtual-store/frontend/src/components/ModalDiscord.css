@@ -1,0 +1,60 @@
+.discord-modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.discord-modal-content {
+    background: #23272a;
+    border-radius: 18px;
+    padding: 32px 28px 24px 28px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    min-width: 320px;
+    max-width: 90vw;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    animation: modalPop 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes modalPop {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+
+.discord-qr {
+    width: 180px;
+    height: 180px;
+    margin: 18px 0 12px 0;
+    border-radius: 12px;
+    background: #fff;
+    padding: 8px;
+    display: block;
+}
+
+.discord-link {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 22px;
+    background: #5865F2;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(88,101,242,0.15);
+}
+.discord-link:hover {
+    background: #4752c4;
+}

@@ -1,0 +1,21 @@
+/* Añade estos estilos */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Previene el scroll global */
+  }
+  
+  .App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth; /* Suaviza el scroll */
+  }
+  
+  .main-content {
+    flex: 1;
+    overflow-y: auto; /* Habilita scroll solo en el área de contenido */
+    padding-top: 0px; /* Ajusta según la altura de tu menú */
+    scroll-behavior: smooth; /* Suaviza el scroll */
+  }
