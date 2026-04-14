@@ -1,0 +1,282 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{wrapfig}   % Para permitir que el texto envuelva la imagen
+\usepackage[center]{background}
+\geometry{left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm}
+\usepackage{graphicx}  % Para insertar imágenes
+\usepackage{caption}   % Para subtítulos
+\usepackage{float}  % Agregar en el preámbulo
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue]{hyperref}  % Para habilitar enlaces
+\begin{document}
+\backgroundsetup{
+  scale=1.2,          % Ajustar la escala según sea necesario
+  color=white,
+  opacity=0.2,     % Cambia el valor para ver más opacidad
+  angle=0,
+  position=current page.center,
+  vshift=0,
+  hshift=0,
+  contents={%
+    \includegraphics[width=\paperwidth,height=\paperheight]{Imagenes/fondo.jpg}
+  }
+}
+
+% Configuración para el título
+\title{
+    \vspace{-1cm}
+    \includegraphics[width=15cm]{Logos/logouam.png}\\[2cm] % Insertar logo de la UAM
+    \textbf{Proyecto Terminal}\\[0.5cm]
+    \large \textbf{Creación de punto de venta vinculado con una red social} \\[1cm]
+    \vspace{1cm}
+}
+
+\author{
+    \textbf{Álvaro Arturo Ramírez Arriaga}\\[1cm]
+    \textbf{Asesores:}\\[1cm]
+    \textbf{Romero Duran Jose Netz}\\[1cm]
+    \textbf{Núñez Reyes Alba Rocio}\\[1cm]
+}
+
+\date{
+    \begin{flushright}
+    \textbf{Fecha: Octubre 2024}
+    \end{flushright}
+}
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+\renewcommand\thesection{\arabic{section}}%reconfiguracion a arabico de las secciones
+
+\section{Introducción}
+
+    
+\newpage
+
+\subsection{Planteamiento del problema}
+
+Para este proyecto el principal problema sera la creación de una Base de datos robusta y que un bot de discord pueda tener acceso a estos datos para poder desarrollar su función de recordar o informar al usuario de sus pagos ya sea de compra realizadas o de suscripciones por vencerse.\\
+
+La base de datos o el bot deberán tener un sistema de alertas o trigers(disparadores) para saber cuando hay una nueva entrada en la base de datos y que a su vez el bot de Discord sepa cuando tiene que informar al usuario, estas alertas serán: \\
+1.- Al acercarse la fecha de un próximo pago de una suscripción mensual.\\
+2.-Al ingresar una nueva entrada en la Base de Datos por una compra hecha por el usuario.\\
+
+Otro reto dentro del proyecto sera la creación del bot de discord ya que este debe generar los informes tanto para el usuario como para el administrador y darles un canal privado a ambos para que puedan continuar con los detalles de la compra si es que se requiere, es por eso que la base de datos debe ser lo suficientemente robusta y bien planificada para tener la capacidad de gestionar de forma eficiente los datos que ocupara el bot.
+
+\newpage
+
+\section{Objetivos}
+\subsection{Objetivo general}
+Desarrollar una tienda en línea integrada con un bot de Discord para optimizar la experiencia de compra de los usuarios y mejorar la gestión de suscripciones y notificaciones, tanto para los clientes como para los administradores de la tienda. Esta integración buscará resolver las limitaciones actuales del comercio electrónico en términos de comunicación efectiva y personalizada, permitiendo a los usuarios recibir actualizaciones en tiempo real sobre sus compras y suscripciones, mientras que los propietarios del servidor obtienen información detallada sobre las transacciones. El proyecto tiene como finalidad ofrecer una solución tecnológica innovadora, basada en la automatización de procesos y la comunicación directa a través de una plataforma de mensajería muy utilizada, como lo es Discord.\\
+
+\subsection{Objetivos específicos}
+Para este proyecto se tienen los siguientes objetivos específicos \\
+1.- Desarrollar una base de datos centralizada que almacene y gestione la información de las compras y suscripciones.\\
+
+2.- Diseñar e integrar un bot de Discord que actúe como asistente personal de los usuarios.\\
+
+3.- Desarrollar un sistema de notificaciones automatizadas para el dueño del servidor de Discord.\\
+
+4.-Desarrollar una lógica capaz de identificar cuando el bot debe notificar al usuario de su compra o suscripciones (deste BD o logica en el bot de discord).\\
+
+5.- Facilitar la gestión de compras y suscripciones para los usuarios así como la gestión de los artículos de la tienda desde el lado de el administrador.\\
+
+\newpage
+
+\section{Estado del Arte}
+Ahora analizaremos sitios que cuenten con características o funcionalidades a las de el proyecto que se va a desarrollar: las herramientas a analizar serán paypal (forma de pago), bot de discord meet6, Proyecto tienda virtual uniformes escolares y Facebook market.\\
+\subsection{PayPal}
+
+El método de pago de PayPal es mas una implementación por API que una creación de una interfaz en si, esta API lo que necesita es la solicitud de el pago y el precio del producto y a que cuenta de paypal se va a depositar el dinero una vez se pague, por lo tanto la única funcionalidad que se debe implementar como programador es la conexión de la API y el botón para mandar a llamar a PayPal\\
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.7\textwidth]{proyecto terminal/Imagenes/pago1.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \captionsetup{justification=centering}
+    \caption{Boton de método de pago PayPal de plataforma Steam}  % Pie de imagen o descripción
+    \label{fig:pago1}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+El botón de la figura 1 no es mas que una conexión de la página web la sección de método de pago con el verdadero gestor de la transacción como lo es PayPal a través de la API
+
+\newpage
+Una vez llamada la API de PayPal esta nos llevara a una ventana emergente (figura 2) donde se nos pedirá ingresar los datos de la cuenta de la plataforma PayPayl para poder continuar con el cobro de el servicio. Esta interfaz ya no es necesario crearla.\\
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.5\textwidth]{proyecto terminal/Imagenes/pago2.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \captionsetup{justification=centering}
+    \caption{Formulario dentro de PayPal para inicio de sesión}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+El pago entraría casi de inmediato solo faltaría confirmar el pago para que se realice el cobro de el servicio y finalizaría así el cobro por vía PayPal.
+
+\newpage
+\subsection{Meet6 bot discord}
+
+El bot que meet6 cuenta con muchas características interesantes para nosotros pero en este proyecto nos centraremos en la posibilidad de enviar notificaciones de recordatorios por un canal en especifico o por mensaje directo al usuario.
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/recordatorio1.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \captionsetup{justification=centering}
+    \caption{Ventana de seleccion de canal para generar el recordatorio}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+En la ventana de la figura 3 podremos seleccionar en que canal queremos que se genere el recordatorio que vamos a colocar, esto es útil para aplicar recordatorios para un grupo de personas con roles en especifico dentro del servidor de discord, de esta forma solo llegaran los recordatorios a las personas que queremos que lleguen estos mensajes, también podemos poner un auto rol para que ellos decidan si quieren recibir los recordatorios o no algo similar a cuando te pregunta una empresa si quieres recibir correos de promociones.
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/recordatorio3.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \captionsetup{justification=centering}
+    \caption{Ventana donde se ingresa el mensaje de recordatorio}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+\newpage
+En la ventana mostrada en la figura 4 se ingresará el mensaje que deseamos que los usuarios reciban como recordatorio. En este caso, el mensaje consistirá únicamente en texto, aunque también es posible agregar una imagen para que el bot la publique automáticamente junto con el texto. De esta forma, se puede generar una publicidad mucho más eficaz para los artículos y el público objetivo al que va dirigida.\\
+
+Además, al tener la posibilidad de enviar mensajes directos a los usuarios, podremos notificarles sobre próximas fechas de pago para alguna suscripción activa, o incluso ofrecerles descuentos personalizados.
+
+\newpage
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/recordatorio2.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \captionsetup{justification=centering}
+    \caption{ventana de configuración de recordatorios automáticos}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+La función de recordatorio se puede configurar de forma personalizada, como se muestra en la figura 5. Para que el recordatorio se genere automáticamente a intervalos de tiempo específicos, es necesario indicar el día y la hora. Esta funcionalidad es útil para evitar tener que crear el recordatorio de forma manual cada vez que se desee generar uno similar. En nuestro caso, tomará esta información de una base de datos, donde verificará si es necesario aplicar el recordatorio. En caso de tratarse de una mensualidad, recordará al usuario con 5 días de anticipación, revisando la fecha del siguiente cobro.
+\newpage
+\subsection{Tienda Uniformes escolares}
+
+Este proyecto desarrollado en la universidad Oberta de Catalunya se hizo una tienda online de uniformes escolares el cual tomaremos algunas utilidades de este proyecto como referencia.\\
+
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=1.0\textwidth]{proyecto terminal/Imagenes/UE1.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \captionsetup{justification=centering}  % Ajusta el caption para centrarlo
+    \caption{Interfaz de artículos del proyecto tienda virtual de uniformes escolares.\\
+    \href{https://openaccess.uoc.edu/bitstream/10609/45631/8/rtejaTFC0116memoria.pdf}{https://openaccess.uoc.edu}}  % Pie de imagen con enlace
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+ Como podemos ver en la figura 6 la interfaz de selección del producto es bastante simple, unicamente hace falta dar click sobre añadir al carrito para poder adquirirlo, también se ve el precio de el producto y su nombre.\\
+
+ De el lado izquierdo también se puede apreciar el filtro que se tiene para los productos, de esta forma se tiene una mejor organización sobre lo que esta observando en usuario comprador en este momento. Al lado derecho se muestran los productos que han sido añadidos al carrito así como el precio final de la compra.
+ \newpage
+ 
+  En la figura 7 podemos ver que pasa al darle click a comprar ahora nos manda a la pagina de pago  donde saldrán los datos del comprador , en este caso se ve como el pago se carga automáticamente a la mensualidad de el colegio, en nuestro caso habrá un método de pago para realizar el pago.\\
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=1\textwidth]{proyecto terminal/Imagenes/UE2.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \captionsetup{justification=centering}
+    \caption{ventana donde se muestra toda la información del comprador y la lista de lo que se esta comprando\\  % Pie de imagen o descripción
+\href{https://openaccess.uoc.edu/bitstream/10609/45631/8/rtejaTFC0116memoria.pdf}{https://openaccess.uoc.edu}}
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+ Para nuestro proyecto sera importante colocar una sección de productos para seleccionarlos y después de seleccionarlo colocar una descripción y mas imágenes para que el comprador pueda ver y estar mas seguro de que se esta comprando, al igual que un desglose de su compra total.
+\newpage
+\clearpage
+\subsection{Facebook market}
+Facebook Market también es otra de las plataformas mas utilizadas para la compra y venta de productos por esta razón es otra buena referencia para el proyecto.\\
+
+De igual forma facebook market no se centra en una interfaz muy llamativa si no mas en una interfaz simplista y funcional evitando así que las personas no familiarizadas a estas plataformas puedan confundirse o frustrarse al utilizarlo.
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/FBm1.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \captionsetup{justification=centering}
+    \caption{Ventana de selección de productos en facebook market}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+Como podemos ver en la figura 8, la ventana de facebook market también es muy ensilla e intuitiva, vemos que unicamente sale el precio y una pequeña descripción, quizá queda menos claro que en amazon que hacer después, ya que amazon tiene un boton que dice comprar y es aun más directa al querer vender sus productos.\\
+\newpage
+
+
+En la figura 9 podemos ver como se muestra la información del vendedor, detalles del producto y algunas especificaciones básicas, no es tan extensa la descripción como en amazon sin embargo nos da la posibilidad de enviarle un mensaje al comprador para poder preguntarle a el de una forma mas directa y personalizada.\\
+
+Si bien las dos plataformas son orientadas a que terceros vendan sus productos en su tienda son buenas referencias para este proyecto, al tener ventanas sencillas y con muchos botones, de esta forma el comprador no se ve abrumado al querer realizar la compra.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.35\textwidth]{proyecto terminal/Imagenes/FBm3.png}
+    \caption{Ventana de información de el producto y del vendedor}
+\end{figure}
+
+\newpage
+
+\section{Tecnologias}
+Las tecnologias para este proyecto seran API PayPal, API Discord, 
+ MYSQL, PHP, Node.js, React. Se explicaran cada una de las tecnologías para definir que funcionalidad van a desempeñar en el proyecto propuesto.
+\subsection{PayPal}
+
+\begin{wrapfigure}{r}{0.30\textwidth}
+    \includegraphics[width=0.40\textwidth]{proyecto terminal/Logos/pplogo.png}
+\end{wrapfigure}
+
+
+PayPal es una de las plataformas más utilizadas para el comercio electrónico gracias a que nos permite realizar pagos de forma rápida y fácil. Para este proyecto se ha decidido usar PayPal ya que los usuarios a los que está dirigida la plataforma tienen conocimientos y cuentan con este método de pago. Además, PayPal permite pagos desde otros países de forma sencilla, lo que le otorga ventaja sobre otras plataformas similares como Mercado Pago.\\
+
+La integración de PayPal en esta plataforma de ventas permite un manejo flexible y seguro de las transacciones, asegurando que los pagos de los usuarios se procesen correctamente y sin complicaciones. 
+\\
+
+\subsection{Discord}
+
+\begin{wrapfigure}{l}{.20\textwidth}
+    \includegraphics[width=0.20\textwidth]{proyecto terminal/Logos/dislogo.png}
+\end{wrapfigure}
+
+
+La plataforma de discord es una red social que nos permite crear comunidades grandes de un tema o actividad especifica, esto nos ayuda a poder gestionar grupos de personas dando roles, permisos y colocando bots para la gestión del servidor de forma automática.\\
+Para este proyecto se utilizara la API de discord para poder hacer un inicio de sesión de forma sencilla, esto nos permitirá guardar en la Base de datos a que usuario le pertenece la compra.\\
+\newpage
+\subsection{Node.js}
+\begin{wrapfigure}{r}{0.20\textwidth}
+    \includegraphics[width=0.25\textwidth]{proyecto terminal/Logos/nodejslogo.png}
+\end{wrapfigure}
+
+Java script es un lenguaje de programación para el backend que con tecnologías como Node.js permite construir aplicaciones del lado del servidor, lo que permite gestionar bases de datos, autenticación de usuarios, etc.\\
+
+Para este proyecto utilizaremos Node.js junto con una biblioteca llamada discord.js que simplifica la interacción con la API de Discord la cual nos permitirá programar un bot que pueda enviar y recibir mensajes, unirse a servidores, reaccionar a eventos y mucho más.\\ 
+
+
+\subsection{PHP}
+
+\begin{wrapfigure}{l}{0.20\textwidth}
+    \includegraphics[width=0.20\textwidth]{proyecto terminal/Logos/phplogo.png}
+\end{wrapfigure}
+PHP se utiliza para generar páginas web dinámicas que cambian en función de la interacción del usuario o de datos en una base de datos. Un ejemplo seria, al iniciar sesión en un sitio web o navegar por una tienda online, PHP es responsable de mostrar contenido específico para el perfil como productos personalizados etc.\\
+
+Es por esta razón que para este proyecto se utilizara php para hacer la lógica de el lado del servidor y poder darle las instrucciones de gestión de la base de datos, para mostrar, agregar, modificar.\\
+
+PHP también nos brinda buenas opciones de seguridad como Prepared Statements (Consultas Preparadas) que protege contra las inyecciones SQL, esta es otra de las razones por las que se ha elegido esta tecnología para el proyecto.
+
+\subsection{React}
+
+\begin{wrapfigure}r{0.25\textwidth}
+    \includegraphics[width=0.25\textwidth]{proyecto terminal/Logos/reactlogo.png}
+\end{wrapfigure}
+React es una biblioteca de JavaScript que es usada para construir interfaces de usuario (UI) interactivas y dinámicas.Su principal objetivo es facilitar la creación de interfaces de usuario a través de componentes reutilizables y actualizaciones eficientes del DOM (Document Object Model).\\
+
+Esta biblioteca se basa en componentes, lo que permite dividir una interfaz en piezas pequeñas y manejables que se pueden reutilizar en diferentes partes de la aplicación, mejorando así la mantenibilidad del código.\\
+
+Por su facilidad para crear interfaces dinámicas y que es fácil de mantener a largo plazo es por lo que se eligió esta tecnología sobre otras similares.\\
+\newpage
+\subsection{MySQL}
+
+\begin{wrapfigure}{l}{0.20\textwidth}
+    \includegraphics[width=0.20\textwidth]{proyecto terminal/Logos/mysqllogo.png}
+\end{wrapfigure}
+MySQL es un sistema de gestión de bases de datos relacional que utiliza el lenguaje SQL para administrar y manipular datos. Es muy utilizado para almacenar, organizar y gestionar grandes cantidades de información en aplicaciones de software.\\
+
+A través de SQL, MySQL permite realizar consultas complejas sobre los datos almacenados. Esto incluye operaciones como selección, eliminación, inserción, actualización de datos etc.\\
+
+En este proyecto es muy importante tener una base de datos muy solida y para poder gestionarla de forma adecuada se selecciono MySQL gracias a su gran capacidad de manejo de datos.
+\end{document}

@@ -1,0 +1,227 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage[center]{background}
+\geometry{left=2.54cm, right=2.54cm, top=2.54cm, bottom=2.54cm}
+\usepackage{graphicx}  % Para insertar imágenes
+\usepackage{caption}   % Para subtítulos
+\usepackage{wrapfig}   % Para permitir que el texto envuelva la imagen
+\begin{document}
+\backgroundsetup{
+  scale=1.2,          % Ajustar la escala según sea necesario
+  color=white,
+  opacity=0.2,     % Cambia el valor para ver más opacidad
+  angle=0,
+  position=current page.center,
+  vshift=0,
+  hshift=0,
+  contents={%
+    \includegraphics[width=\paperwidth,height=\paperheight]{Imagenes/fondo.jpg}
+  }
+}
+
+% Configuración para el título
+\title{
+    \vspace{-1cm}
+    \includegraphics[width=15cm]{Imagenes/logouam.png}\\[2cm] % Insertar logo de la UAM
+    \textbf{Proyecto Terminal}\\[0.5cm]
+    \large \textbf{Creación de punto de venta vinculado con una red social} \\[1cm]
+    \vspace{1cm}
+}
+
+\author{
+    \textbf{Álvaro Arturo Ramírez Arriaga}\\[1cm]
+    \textbf{Asesores:}\\[1cm]
+    \textbf{Romero Duran Jose Netz}\\[1cm]
+    \textbf{Núñez Reyes Alba Rocio}\\[1cm]
+}
+
+\date{
+    \begin{flushright}
+    \textbf{Fecha: Octubre 2024}
+    \end{flushright}
+}
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+\renewcommand\thesection{\arabic{section}}%reconfiguracion a arabico de las secciones
+
+\section{Introducción}
+
+    En la era digital actual, el comercio electrónico ha transformado la forma en que los consumidores adquieren productos y servicios. Con la creciente popularidad de las plataformas de mensajería instantánea y redes sociales, surge la necesidad de integrar experiencias de compra más interactivas y personalizadas. Este proyecto se centra en el desarrollo de una tienda online que no solo permite a los usuarios realizar compras de manera eficiente, sino que también incorpora un bot de Discord que actúa como asistente personal para mejorar la experiencia del cliente. Esta innovadora combinación busca no solo facilitar las transacciones comerciales, sino también brindar un servicio al cliente proactivo y altamente accesible.\\
+
+    La tienda online está diseñada para ofrecer una variedad de productos, adaptándose a las necesidades y preferencias de los usuarios. A través de una interfaz intuitiva, los clientes pueden explorar, seleccionar y adquirir productos con facilidad, aprovechando diversas opciones de pago y entrega. Sin embargo, lo que realmente distingue a esta tienda de las plataformas convencionales es la integración de un bot de Discord que actúa como un conector entre la tienda y los usuarios. Discord, una plataforma de comunicación popular entre comunidades de jugadores y grupos de interés, proporciona un entorno ideal para fomentar una relación cercana entre la tienda y sus clientes.\\
+    
+    El bot de Discord no solo recuerda a los usuarios las suscripciones que están a punto de terminar, sino que también envía notificaciones sobre sus compras, lo que ayuda a mantener a los clientes informados y comprometidos. Esta funcionalidad permite a los usuarios gestionar sus compras y suscripciones de manera más efectiva, asegurándose de que no pierdan ninguna oferta ni se olviden de renovar sus servicios. Además, el bot ofrece información valiosa sobre nuevos productos, promociones y descuentos, lo que contribuye a una experiencia de compra más personalizada y atractiva.\\
+    
+    Por otro lado, el bot también juega un papel crucial en la gestión del servidor de Discord, notificando al propietario del servidor sobre las compras realizadas. Esto no solo proporciona al propietario una visión general de las ventas y la actividad de la tienda, sino que también le permite interactuar directamente con los clientes, resolver consultas y mejorar el servicio ofrecido. La capacidad de recibir información en tiempo real sobre las transacciones fortalece la conexión entre la tienda y su comunidad, creando un ambiente de confianza y satisfacción.
+\newpage
+
+\subsection{Planteamiento del problema}
+A medida que el comercio electrónico continúa expandiéndose, las expectativas de los consumidores también han evolucionado. Los usuarios buscan experiencias de compra que sean no solo eficientes, sino también personalizadas y accesibles en tiempo real. Sin embargo, muchas plataformas de comercio electrónico aún carecen de una comunicación efectiva y directa con sus clientes, lo que puede llevar a la insatisfacción y, en última instancia, a la pérdida de ventas. Además, el seguimiento de suscripciones y compras puede ser complicado para los usuarios, lo que a menudo resulta en olvidos que afectan su experiencia general.\\
+
+En este contexto, surge la necesidad de crear un sistema que no solo facilite la compra de productos, sino que también ofrezca un soporte continuo y personalizado a los usuarios. Los consumidores, al realizar compras en línea, a menudo se enfrentan a la falta de información sobre el estado de sus pedidos, recordatorios de suscripciones y actualizaciones sobre nuevos productos o promociones. Este vacío en la comunicación puede dar lugar a frustraciones y a una percepción negativa de la marca.\\
+
+Adicionalmente, los propietarios de las tiendas también enfrentan desafíos en la gestión de la relación con sus clientes. La falta de interacción en tiempo real puede limitar su capacidad para resolver problemas, responder preguntas y fomentar la lealtad del cliente. En un mercado competitivo, donde las opciones son numerosas, es fundamental establecer conexiones significativas y duraderas con los clientes.\\
+
+Por lo tanto, el planteamiento del problema radica en la necesidad de integrar una solución que combine la funcionalidad de una tienda online con un sistema de comunicación efectivo, como un bot de Discord. Este bot no solo servirá como un canal de comunicación entre la tienda y los usuarios, sino que también proporcionará un recordatorio de suscripciones y notificaciones sobre compras. Sin esta integración, los clientes pueden perder de vista sus compromisos de compra, lo que afecta negativamente la retención y la satisfacción del cliente.\\
+
+Además, los dueños de las tiendas se ven limitados en su capacidad para gestionar y monitorizar la actividad de ventas y las interacciones con los clientes. Sin un sistema que les notifique sobre las compras y les proporcione una copia de los datos relevantes, su capacidad para ofrecer un servicio proactivo y resolver problemas se ve comprometida. Esto no solo afecta la experiencia del cliente, sino que también impacta negativamente en la reputación y el crecimiento de la tienda.
+\newpage
+
+\section{Objetivos}
+\subsection{Objetivo general}
+Desarrollar una tienda en línea integrada con un bot de Discord para optimizar la experiencia de compra de los usuarios y mejorar la gestión de suscripciones y notificaciones, tanto para los clientes como para los administradores de la tienda. Esta integración buscará resolver las limitaciones actuales del comercio electrónico en términos de comunicación efectiva y personalizada, permitiendo a los usuarios recibir actualizaciones en tiempo real sobre sus compras y suscripciones, mientras que los propietarios del servidor obtienen información detallada sobre las transacciones. El proyecto tiene como finalidad ofrecer una solución tecnológica innovadora, basada en la automatización de procesos y la comunicación directa a través de una plataforma de mensajería muy utilizada, como lo es Discord.
+\newpage
+\subsection{Objetivos específicos}
+Para este proyecto se tienen 6 objetivos específicos \\
+
+1.- Implementar una plataforma de tienda en línea eficiente y fácil de usar.
+Este objetivo consiste en desarrollar una tienda en línea que permita a los usuarios navegar fácilmente por el catálogo de productos, seleccionar los artículos que desean adquirir, y completar el proceso de compra de manera intuitiva y rápida. La tienda debe ofrecer una interfaz de usuario atractiva y sencilla, que incluya características esenciales como el carrito de compras, métodos de pago seguros, y opciones de envío. Adicionalmente, la plataforma debe estar diseñada para ser responsive, es decir, adaptarse a diferentes dispositivos, como computadoras, tabletas y smartphones, para garantizar una experiencia de usuario óptima en cualquier contexto.\\
+
+2.- Diseñar e integrar un bot de Discord que actúe como asistente personal de los usuarios.
+El desarrollo de un bot para Discord que funcione en sinergia con la tienda en línea es un componente clave de este proyecto. Este bot será responsable de enviar notificaciones personalizadas a los usuarios sobre sus compras, suscripciones, y productos disponibles. Además, deberá recordar a los usuarios las suscripciones que están por vencer y proporcionarles opciones rápidas para renovarlas o gestionarlas. El bot también será capaz de interactuar directamente con los usuarios para responder preguntas frecuentes, ofrecer soporte automatizado, e informarles de ofertas y promociones. Su integración con Discord tiene como objetivo aprovechar el entorno familiar y accesible de la plataforma, donde los usuarios ya pasan tiempo.\\
+
+3.- Desarrollar un sistema de notificaciones automatizadas para el dueño del servidor de Discord.
+Además de las notificaciones dirigidas a los usuarios, es fundamental crear un sistema que mantenga informado al propietario del servidor de Discord sobre las actividades comerciales que se desarrollan en la tienda. Este sistema enviará automáticamente resúmenes de las compras realizadas, incluyendo detalles como el nombre del comprador, los productos adquiridos, y el estado del pedido. Estas notificaciones permitirán al administrador estar al tanto del rendimiento de la tienda, gestionar adecuadamente las transacciones, y responder de forma inmediata a cualquier consulta o problema que surja. También ofrecerá reportes periódicos sobre las ventas y el comportamiento de los clientes, lo que ayudará a tomar decisiones estratégicas.\\
+
+4.- Desarrollar una base de datos centralizada que almacene y gestione la información de las compras y suscripciones.
+Este objetivo implica la creación de una base de datos que funcione como el núcleo de la plataforma, donde se almacenará toda la información relacionada con las compras, suscripciones, productos y usuarios. Esta base de datos debe ser accesible tanto por la tienda online como por el bot de Discord, para garantizar que las notificaciones y recordatorios se basen en información actualizada y precisa. Además, la base de datos debe cumplir con los estándares de seguridad para proteger la información personal y financiera de los usuarios. Se diseñarán procesos de actualización y consulta que permitan mantener sincronizados los datos entre el sistema de compras y el bot de Discord.\\
+\newpage
+
+5.- Mejorar la experiencia del cliente mediante la automatización de recordatorios y notificaciones personalizadas.
+Un aspecto crucial de este proyecto es asegurar que la experiencia de compra sea satisfactoria para los usuarios. A través de la automatización de recordatorios de suscripciones, notificaciones sobre nuevos productos, y alertas sobre promociones, el bot de Discord servirá como un asistente proactivo que se adelanta a las necesidades del cliente. La automatización reducirá la carga de trabajo manual para el propietario de la tienda y, al mismo tiempo, asegurará que los usuarios estén siempre al tanto de las oportunidades disponibles, evitando que se pierdan fechas importantes o descuentos exclusivos. Esta personalización mejorará la lealtad del cliente y fomentará una mayor interacción con la plataforma.\\
+
+6.- Facilitar la gestión de compras y suscripciones para los usuarios mediante una interfaz de administración clara y accesible.
+A través del bot de Discord, los usuarios podrán gestionar sus suscripciones y compras de manera más eficiente. Este sistema les permitirá revisar el estado de sus pedidos, actualizar detalles de facturación y envío, renovar suscripciones próximas a expirar, o incluso cancelar servicios si lo desean. Este nivel de control y transparencia no solo mejora la satisfacción del cliente, sino que también reduce la posibilidad de problemas en las transacciones. La interfaz debe ser intuitiva y amigable, facilitando a los usuarios realizar estas gestiones de forma rápida y sin complicaciones.\\
+\newpage
+
+\section{Estado del Arte}
+Ahora analizaremos sitios que cuenten con caracteristicas o funcionalidades a las de el proyecto que se va a desarrollar: las herramientas a analizar serán paypal (forma de pago), bot de discord meet6, tienda online amazon y Facebook market.\\ 
+
+\subsection{PayPal}
+
+El método de pago de PayPal es mas una implementación por API que una creación de una interfaz en si, esta API lo que necesita es la solicitud de el pago y el precio del producto y a que cuenta de paypal se va a depositar el dinero una vez se pague, por lo tanto la unica funcionalidad que se debe implementar como programador es la conexión de la API y el botón para mandar a llamar a PayPal//
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.7\textwidth]{proyecto terminal/Imagenes/pago1.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \caption{Boton de metodo de pago PayPal de plataforma Steam}  % Pie de imagen o descripción
+    \label{fig:pago1}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+El botón de la figura 1 no es mas que una conexión de la página web la sección de método de pago con el verdadero gestor de la transacción como lo es PayPal a través de la API
+
+\newpage
+Una vez llamada la API de PayPal esta nos llevara a una ventana emergente (figura 2)donde se nos pedirá ingresar los datos de la cuenta de la plataforma PayPayl para poder continuar con el cobro de el servicio. Esta interfaz ya no es necesario crearla.\\
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.5\textwidth]{proyecto terminal/Imagenes/pago2.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \caption{Formulario dentro de PayPal para inicio de sesión}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+El pago entraría casi de inmediato solo faltaría confirmar el pago para que se realice el cobro de el servicio y finalizaría así el cobro por vía PayPal
+
+\newpage
+\subsection{Meet6 bot discord}
+
+El bot que meet6 cuenta con muchas características interesantes para nosotros pero en este proyecto nos centraremos en la posibilidad de enviar notificaciones de recordatorios por un canal en especifico o por mensaje directo al usuario.
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/recordatorio1.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \caption{Ventana de seleccion de canal para generar el recordatorio}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+En la ventana de la figura 3 podremos seleccionar en que canal queremos que se genere el recordatorio que vamos a colocar, esto es útil para aplicar recordatorios para un grupo de personas con roles en especifico dentro del servidor de discord, de esta forma solo llegaran los recordatorios a las personas que queremos que lleguen estos mensajes, también podemos poner un auto rol para que ellos decidan si quieren recibir los recordatorios o no algo similar a cuando te pregunta una empresa si quieres recibir correos de promociones.
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/recordatorio3.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \caption{Ventana donde se ingresa el mensaje de recordatorio}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+\newpage
+En la ventana mostrada en la figura 4 se ingresará el mensaje que deseamos que los usuarios reciban como recordatorio. En este caso, el mensaje consistirá únicamente en texto, aunque también es posible agregar una imagen para que el bot la publique automáticamente junto con el texto. De esta forma, se puede generar una publicidad mucho más eficaz para los artículos y el público objetivo al que va dirigida.\\
+
+Además, al tener la posibilidad de enviar mensajes directos a los usuarios, podremos notificarles sobre próximas fechas de pago para alguna suscripción activa, o incluso ofrecerles descuentos personalizados.
+
+\newpage
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/recordatorio2.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \caption{ventana de configuración de recordatorios automáticos}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+La función de recordatorio se puede configurar de forma personalizada, como se muestra en la figura 5. Para que el recordatorio se genere automáticamente a intervalos de tiempo específicos, es necesario indicar el día y la hora. Esta funcionalidad es útil para evitar tener que crear el recordatorio de forma manual cada vez que se desee generar uno similar. En nuestro caso, tomará esta información de una base de datos, donde verificará si es necesario aplicar el recordatorio. En caso de tratarse de una mensualidad, recordará al usuario con 5 días de anticipación, revisando la fecha del siguiente cobro.
+\newpage
+\subsection{Tienda Amazon}
+
+Al ser una de las plataformas mas utilizadas para el comercio electrónico es una buena referencia para la tienda online que se esta desarrollando en este proyecto.\\
+
+Si bien su interfaz podría parecer simple, amazon se vasa mas en funcionalidad que en un diseño muy elaborado, al parecer mas ensillo también es menos confuso de utilizar para personas que no esten muy familiarizadas con este tipo de plataforma.\\
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/amazon1.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \caption{ventana donde se muestran los artículos en venta}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+ Como podemos ver en la figura 6 la interfaz de selección del producto es bastante simple, unicamente hace falta dar click sobre el producto que deseas adquirir, también se ve una pequeña descripción sobre el producto y su precio.\\
+
+ Al ser una interfaz sencilla no hay muchas distracciones y unicamente se centra en la venta de productos.
+ \newpage
+ 
+  En la figura 7 podemos ver que pasa al darle click al producto seleccionado lo cual nos lleva a la pagina del producto, en esta sección se muestran mas imágenes del producto, descripción, precio y especificaciones del producto.\\
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.6\textwidth]{proyecto terminal/Imagenes/amazon2.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \caption{ventana donde se muestra toda la información relacionada al articulo seleccionado}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+ Para nuestro proyecto sera importante colocar una sección de productos para seleccionarlos y después de seleccionarlo colocar una descripción y mas imágenes para que el comprador pueda ver y estar mas seguro de que se esta comprando.
+\newpage
+Esta es la ventana de pago donde se seleccionara método de pago y se ingresaran los datos del comprador.\\
+En nuestro proyecto el único método de pago sera PayPal y los datos del usuario ya estarán en la base de datos, al no tener que ingresar una dirección ya que no serán artículos físicos los que se van a vender entonces no se tendría que pedir mas información, podría remplazarse esta sección en selección de paypal y la confirmación del pago.
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/amazon3.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \caption{Ventana de pago de Amazon}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+\newpage
+\subsection{Facebook market}
+Facebook Market también es otra de las plataformas mas utilizadas para la compra y venta de productos por esta razon es otra buena referencia para el proyecto.\\
+
+De igual forma facebook market no se centra en una interfaz muy llamativa si no mas en una interfaz simplista y funcional evitando así que las personas no familiarizadas a estas plataformas puedan confundirse o frustrarse al utilizarlo.
+
+\begin{figure}[ht]  % Entorno figure para insertar la imagen
+    \centering  % Centrar la imagen
+    \includegraphics[width=0.8\textwidth]{proyecto terminal/Imagenes/FBm1.png} % Ajustar el tamaño de la imagen y la ruta de la imagen
+    \caption{Ventana de selección de productos en facebook market}  % Pie de imagen o descripción
+    \label{fig:mi-imagen}  % Etiqueta para referenciar la imagen en el documento
+\end{figure}
+
+Como podemos ver en la figura 9, la ventana de facebook market también es muy ensilla e intuitiva, vemos que unicamente sale el p´recio y una pequeña descripción, quiza queda menos claro que en amazon que hacer después, ya que amazon tiene un boton que dice comprar y es aun más directa al querer vender sus productos.\\
+
+
+\begin{wrapfigure}{r}{0.3\textwidth}  % 'l' para alinear la imagen a la izquierda
+    \includegraphics[width=0.35\textwidth]{proyecto terminal/Imagenes/FBm3.png}
+    \caption{Ventana de selección de productos en Facebook Market}
+    \label{fig:mi-imagen}
+\end{wrapfigure}
+
+En la figura 10 podemos ver como se muestra la información del vendedor, detalles del producto y algunas especificaciones básicas, no es tan extensa la descripción como en amazon sin embargo nos da la posibilidad de enviarle un mensaje al comprador para poder preguntarle a el de una forma mas directa y personalizada.\\
+
+Si bien las dos plataformas son orientadas a que terceros vendan sus productos en su tienda son buenas referencias para este proyecto, al tener ventanas sencillas y con muchos botones, de esta forma el comprador no se ve abrumado al querer realizar la compra.
+
+
+\end{document}

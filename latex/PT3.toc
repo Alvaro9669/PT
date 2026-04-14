@@ -1,0 +1,63 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Planteamiento del Problema}{5}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Objetivos}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Objetivo General}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Objetivos Específicos}{6}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Estado del Arte}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}PayPal}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}MEE6 Bot Discord}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Tienda de Uniformes Escolares}{12}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Facebook Marketplace}{14}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}AliExpress}{15}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Definición General del sistema}{16}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Propuesta}{16}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Tecnologías}{17}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}PayPal}{17}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Discord}{17}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Node.js}{18}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}React}{18}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}MySQL}{20}{subsubsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.3}Requerimientos Funcionales}{21}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Página Web}{21}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Bot Discord}{21}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Requerimientos no Funcionales}{22}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Página Web}{22}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Bot Discord}{22}{subsubsection.4.4.2}%
+\contentsline {section}{\numberline {5}Diseño del Sistema}{23}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Diagrama General}{23}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Diagramas de Secuencia}{24}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Diagramas de Secuencia de Autenticación y Compra}{24}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Diagramas de Secuencia de Notificación por Bot}{25}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Diagrama de la Base de Datos}{26}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Modelo Conceptual de la Base de Datos}{26}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Modelo Lógico de la Base de Datos}{27}{subsubsection.5.3.2}%
+\contentsline {section}{\numberline {6}Desarrollo del sistema}{28}{section.6}%
+\contentsline {subsection}{\numberline {6.1}APIs}{28}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}API de PayPal}{28}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}API de Discord OAuth2}{32}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Forma Física de la Base de datos}{36}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Tabla ticket}{36}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Tabla articulos\_ticket}{37}{subsubsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.3}Filtro de productos}{38}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Arquitectura del Sistema de Filtros}{38}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Filtro por Nombre de Producto}{39}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}Filtros Jerárquicos de Categorías}{40}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.4}Renderizado Optimizado con useEffect}{41}{subsubsection.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.5}Función de Limpieza de Filtros}{42}{subsubsection.6.3.5}%
+\contentsline {section}{\numberline {7}Resultados}{42}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Interfaces del Punto de Venta}{42}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Interfaz de Cabecera para Login}{42}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Interfaz de Cabecera con Usuario Autenticado}{43}{subsubsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.3}Interfaz de Invitación a Discord}{43}{subsubsection.7.1.3}%
+\contentsline {subsubsection}{\numberline {7.1.4}Interfaz de Autenticación}{44}{subsubsection.7.1.4}%
+\contentsline {subsubsection}{\numberline {7.1.5}Interfaz del Carrito con Productos}{46}{subsubsection.7.1.5}%
+\contentsline {subsubsection}{\numberline {7.1.6}Interfaz del Carrito Vacío}{46}{subsubsection.7.1.6}%
+\contentsline {subsubsection}{\numberline {7.1.7}Interfaz de busqueda de Productos}{47}{subsubsection.7.1.7}%
+\contentsline {subsection}{\numberline {7.2}Interfaces del Bot de Discord}{47}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Creación de Comandos para Usuarios}{48}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Comprobación de Tickets Pendientes}{48}{subsubsection.7.2.2}%
+\contentsline {subsubsection}{\numberline {7.2.3}Interfaz de Notificación vía Discord}{49}{subsubsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.4}Envío de Notificaciones por Canales Privados}{50}{subsubsection.7.2.4}%
+\contentsline {section}{\numberline {8}Conclusiones}{51}{section.8}%
+\contentsline {section}{\numberline {9}Referencias}{52}{section.9}%
